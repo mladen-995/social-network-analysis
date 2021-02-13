@@ -18,7 +18,7 @@ def createCsvOfUniquePlayerIds(inputCsv):
 def filterPlayersByPlayerList(outputCsv, playerList):
     playersDf = pd.read_csv('./data/atp_players.csv', header=None)
     playersDfFinal = playersDf.drop(playersDf[~playersDf[0].isin(playerList)].index)
-    playersDfFinal.to_csv(outputCsv)
+    playersDfFinal.to_csv(outputCsv, index=False)
 
 playersFor2018 = createCsvOfUniquePlayerIds('./data/atp_matches_2018.csv')
 
